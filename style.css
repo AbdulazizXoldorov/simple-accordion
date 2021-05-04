@@ -32,18 +32,6 @@ input {
     z-index: -1;
 }
 
-.row {
-    display: flex;
-}
-
-.col {
-    flex-basis: 100%;
-}
-
-.col+.col {
-    margin-left: 1em;
-}
-
 /* Accordion styles */
 .tabs {
     /* box-shadow: 0 100px 80px rgba(0, 0, 0, 0.15); */
