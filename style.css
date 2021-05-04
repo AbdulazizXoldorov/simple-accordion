@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.3rem;
+    background: #9B59B6;
+}
+
+.container {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+h2 {
+    color: #fff;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex-basis: 100%;
+}
+
+.col+.col {
+    margin-left: 1em;
+}
+
+/* Accordion styles */
+.tabs {
+    /* box-shadow: 0 100px 80px rgba(0, 0, 0, 0.15); */
+    /* background: #fff; */
+    display: grid;
+    grid-gap: 1em;
+
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.tab__lable {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1em;
+    font-weight: 600;
+    font-size: 20px;
+}
+i {
+    color: #9B59B6;
+}
+.tab__lable::after {
+    content: "❯";
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.tab__content {
+    font-size: 14px;
+    max-height: 0;
+    padding: 0 1em;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+input:checked + .tab__lable {
+    opacity: 0.6;
+}
+
+input:checked + .tab__lable::after {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+input:checked ~ .tab__content {
+    max-height: 100vh;
+    padding: 1em;
+}
